@@ -6,7 +6,7 @@ def solution(survey, choices):
         if cho <4:
             result += survey[i][0] * (4-cho)
         else:
-            result += survey[i][1] * cho
+            result += survey[i][1] * (cho-4)
         
     print(result)
     
