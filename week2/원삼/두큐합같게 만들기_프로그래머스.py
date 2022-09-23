@@ -9,7 +9,8 @@ def solution(que1, que2):
     goal = (sum_1+sum_2)/2
     count = 0
     while que1 and que2 and count < 2*t: 
-        # 하나 비면 else되게 ~ 어차피 하나만 goal달성하면 되는 문제 + 루프 되는거 방지를 위해 한번 자리 되돌아오면 
+        # 하나 비면 else되게 ~ 어차피 하나만 goal달성하면 되는 문제 + 루프 되는거 방지를 위해 한번 자리 되돌아오면 종료
+        # 이 루프를 제외해야하는 걸 코드작성 처음에 인지했다면 굳이 while 안쓰고 for쓰는게 나을지도? 그 횟수안에 모든 경우가 발생하니
         if sum_1 < sum_2:      # sum을 계속하니 시간 초과 떠서 sum을 저장해놓고 사용
             move = que2.popleft()
             que1.append(move)
