@@ -1,3 +1,6 @@
+# 코딩테스트 연습 > 2022 KAKAO TECH INTERNSHIP > 두 큐 합 같게 만들기
+# https://school.programmers.co.kr/learn/courses/30/lessons/118667
+
 # 2*len(q1) -> 3* 로 수정
 # test 1번 케이스 반례) 
 # [1,1,1,8,10,9] [1,1,1,1,1,1] 
