@@ -2,7 +2,12 @@
 # https://school.programmers.co.kr/learn/courses/30/lessons/92341
 
 import math
-import heapq
+
+def calc_time(in_time,out_time) : 
+    in_h, in_m = map(int, in_time.split(':'))
+    out_h, out_m = map(int, out_time.split(':'))
+    time = (out_h - in_h)*60 + (out_m - in_m)
+    return time
 
 def solution(fees, records):
     answer = []
@@ -15,10 +20,8 @@ def solution(fees, records):
             if key in IN : 
                 in_time = IN[key]
                 out_time = OUT[key]
-                in_h, in_m = map(int, in_time.split(':'))
-                out_h, out_m = map(int, out_time.split(':'))
-                acc_time = (out_h - in_h)*60 + (out_m - in_m)
-                acc_times[key] = acc_time
+                if key in acc_times :acc_times[key] += calc_time(in_time, out_time) #⭐️
+                else : acc_times[key] = calc_time(in_time, out_time)
                 del OUT[key]
             IN[key] = t
         else : OUT[key] = t
@@ -26,15 +29,13 @@ def solution(fees, records):
     for key, in_time in IN.items() :
         if key in OUT : out_time = OUT[key]
         else : out_time = '23:59'
-        in_h, in_m = map(int, in_time.split(':'))
-        out_h, out_m = map(int, out_time.split(':'))
-        acc_time = (out_h - in_h)*60 + (out_m - in_m)
+        acc_time = calc_time(in_time, out_time)
         if key in acc_times : acc_time += acc_times[key]
-        if acc_time <= fees[0] : cost = fees[1]
-        else : cost = fees[1] + math.ceil((acc_time - fees[0])/fees[2]) * fees[3]
-        heapq.heappush(costs,(key,cost))
-    print(costs)
+        if acc_time > fees[0] : cost = fees[1] + math.ceil((acc_time - fees[0])/fees[2]) * fees[3]
+        else : cost = fees[1]
+        costs.append((key,cost))
 
+    costs.sort()
     for key,cost in costs :
         answer.append(cost)
     
