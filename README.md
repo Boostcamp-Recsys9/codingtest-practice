@@ -22,6 +22,6 @@
 [link](https://school.programmers.co.kr/learn/challenges?page=1&partIds=22586)
 
 ### week6
-2020 KAKAO TeCH INTERNSHIP
+2020 KAKAO TECH INTERNSHIP
 
 [link](https://school.programmers.co.kr/learn/challenges?page=1&partIds=18498)
