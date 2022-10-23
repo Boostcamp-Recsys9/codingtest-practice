@@ -17,7 +17,11 @@
 
 [link](https://school.programmers.co.kr/learn/challenges?page=1&partIds=20069)
 ### week5
-2022 KAKAO TECH INTERNSHIP
+2021 KAKAO TECH INTERNSHIP
 
 [link](https://school.programmers.co.kr/learn/challenges?page=1&partIds=22586)
 
+### week6
+2020 KAKAO TECH INTERNSHIP
+
+[link](https://school.programmers.co.kr/learn/challenges?page=1&partIds=18498)
