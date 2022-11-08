@@ -2,15 +2,13 @@ import re
 
 def solution(s):
     answer = []
-    temp = []
-    array = []
-    d = [0] * 100001
+    table = {}
     new = re.split('[{|}|,]',s)
     for i in new:
         if i == "":
             pass
         else:   
-            d[int(i)]+=1
-    for k in range(max(d),0,-1):
-        answer.append(d.index(k))
+            table[int(i)] = table.get(int(i),0)+1
+    temp = sorted(table.items(),key=lambda x:-x[1])
+    answer = [k[0] for k in temp]
     return answer
