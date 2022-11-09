@@ -29,3 +29,7 @@
 
 ![2020 internship](https://user-images.githubusercontent.com/46878756/197375937-e96f17ee-8ed0-4fd8-907e-b38f3d4e2fcd.png)
 
+### week8
+2019 KAKAO winter internship([Problems link](https://school.programmers.co.kr/learn/challenges?order=recent&partIds=17931))
+
+![image](https://user-images.githubusercontent.com/46878756/200761061-d39d79b3-95b1-4049-95bc-f22d58528680.png)
