@@ -1,3 +1,4 @@
+# 2048 (Easy)
 import sys
 from itertools import product
 import copy 
