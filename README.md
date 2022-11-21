@@ -33,3 +33,10 @@
 2019 KAKAO winter internship([Problems link](https://school.programmers.co.kr/learn/challenges?order=recent&partIds=17931))
 
 ![image](https://user-images.githubusercontent.com/46878756/200761061-d39d79b3-95b1-4049-95bc-f22d58528680.png)
+
+### week9
+삼성 SW 역량 테스트 기출 문제
+
+[구슬 탈출2](https://www.acmicpc.net/problem/13460)
+
+[2048(easy)](https://www.acmicpc.net/problem/12100)
