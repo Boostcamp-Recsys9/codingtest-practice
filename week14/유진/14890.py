@@ -83,4 +83,3 @@ for j in range(N):
             # print("j",j)
 
 print(answer)
-print(slope)
