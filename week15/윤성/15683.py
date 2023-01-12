@@ -18,7 +18,7 @@ product_candidate = [[0, 1, 2, 3] for _ in range(len(cctv))]
 cctv_direction_case = list(product(*product_candidate))
 
 
-def checkBlindSpot(direction_case):
+def check_blind(direction_case):
     graph = copy.deepcopy(board)
     for idx in range(len(cctv)):
         x, y, t = cctv[idx]
@@ -26,7 +26,7 @@ def checkBlindSpot(direction_case):
         if t == 1:
             while 0 <= x < N and 0 <= y < M and graph[x][y] != 6:
                 if graph[x][y] == 0:
-                    graph[x][y] = '#'
+                    graph[x][y] = -1
                 x = x + direction[d][0]
                 y = y + direction[d][1]
         elif t == 2:
@@ -34,13 +34,13 @@ def checkBlindSpot(direction_case):
             # 방향 1
             while 0 <= x < N and 0 <= y < M and graph[x][y] != 6:
                 if graph[x][y] == 0:
-                    graph[x][y] = '#'
+                    graph[x][y] = -1
                 x = x + direction[d][0]
                 y = y + direction[d][1]
             # 방향 2
             while 0 <= x2 < N and 0 <= y2 < M and graph[x2][y2] != 6:
                 if graph[x2][y2] == 0:
-                    graph[x2][y2] = '#'
+                    graph[x][y] = -1
                 x2 = x2 + direction[(d+2) % 4][0]
                 y2 = y2 + direction[(d+2) % 4][1]
         elif t == 3:
@@ -48,13 +48,13 @@ def checkBlindSpot(direction_case):
             # 방향 1
             while 0 <= x < N and 0 <= y < M and graph[x][y] != 6:
                 if graph[x][y] == 0:
-                    graph[x][y] = '#'
+                    graph[x][y] = -1
                 x = x + direction[d][0]
                 y = y + direction[d][1]
             # 방향 2
             while 0 <= x2 < N and 0 <= y2 < M and graph[x2][y2] != 6:
                 if graph[x2][y2] == 0:
-                    graph[x2][y2] = '#'
+                    graph[x][y] = -1
                 x2 = x2 + direction[(d + 1) % 4][0]
                 y2 = y2 + direction[(d + 1) % 4][1]
         elif t == 4:
@@ -63,19 +63,19 @@ def checkBlindSpot(direction_case):
             # 방향 1
             while 0 <= x < N and 0 <= y < M and graph[x][y] != 6:
                 if graph[x][y] == 0:
-                    graph[x][y] = '#'
+                    graph[x][y] = -1
                 x = x + direction[d][0]
                 y = y + direction[d][1]
             # 방향 2
             while 0 <= x2 < N and 0 <= y2 < M and graph[x2][y2] != 6:
                 if graph[x2][y2] == 0:
-                    graph[x2][y2] = '#'
+                    graph[x][y] = -1
                 x2 = x2 + direction[(d + 1) % 4][0]
                 y2 = y2 + direction[(d + 1) % 4][1]
             # 방향 3
             while 0 <= x3 < N and 0 <= y3 < M and graph[x3][y3] != 6:
                 if graph[x3][y3] == 0:
-                    graph[x3][y3] = '#'
+                    graph[x][y] = -1
                 x3 = x3 + direction[(d + 3) % 4][0]
                 y3 = y3 + direction[(d + 3) % 4][1]
         elif t == 5:
@@ -85,25 +85,25 @@ def checkBlindSpot(direction_case):
             # 방향 1
             while 0 <= x < N and 0 <= y < M and graph[x][y] != 6:
                 if graph[x][y] == 0:
-                    graph[x][y] = '#'
+                    graph[x][y] = -1
                 x = x + direction[d][0]
                 y = y + direction[d][1]
             # 방향 2
             while 0 <= x2 < N and 0 <= y2 < M and graph[x2][y2] != 6:
                 if graph[x2][y2] == 0:
-                    graph[x2][y2] = '#'
+                    graph[x][y] = -1
                 x2 = x2 + direction[(d + 1) % 4][0]
                 y2 = y2 + direction[(d + 1) % 4][1]
             # 방향 3
             while 0 <= x3 < N and 0 <= y3 < M and graph[x3][y3] != 6:
                 if graph[x3][y3] == 0:
-                    graph[x3][y3] = '#'
+                    graph[x][y] = -1
                 x3 = x3 + direction[(d + 2) % 4][0]
                 y3 = y3 + direction[(d + 2) % 4][1]
             # 방향 4
             while 0 <= x4 < N and 0 <= y4 < M and graph[x4][y4] != 6:
                 if graph[x4][y4] == 0:
-                    graph[x4][y4] = '#'
+                    graph[x][y] = -1
                 x4 = x4 + direction[(d + 3) % 4][0]
                 y4 = y4 + direction[(d + 3) % 4][1]
 
@@ -115,8 +115,8 @@ def checkBlindSpot(direction_case):
     return answer
 
 
-result = 987654321
+result = int(1e9)
 for case in cctv_direction_case:
-    result = min(result, checkBlindSpot(case))
+    result = min(result, check_blind(case))
 
 print(result)
